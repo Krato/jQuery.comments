@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>
+		Demo of jQuery.comments()
+	</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://v4-alpha.getbootstrap.com/assets/css/docs.min.css">
+    <style>
+    	.highlight pre {
+    		white-space: pre-line;
+    	}
+    </style>
+  </head>
+    <body>
+
+		<noscript>Please enable javascript.</noscript>
+		<div id="pWIthComment">
+			<section class="module">
+				<div class="wrapper">
+					<!-- this is da comment -->
+					<div class="xs-4 m-10 l-8 col center">
+						<!-- this is anoher comment -->
+						
+					</div>
+				</div>
+				<!-- 
+						this is
+						a multine
+						comment
+					-->
+			</section>
+			<div>
+				<!-- four comment -->
+			</div>
+		</div>
+
+        <div class="container-fluid mt-4">
+        	<div class="row">
+        		<div class="col-md-4">
+					<h3>Comments parsed</h3>
+					<div class="highlight">
+						<pre>
+							<code  id="parsed">
+							</code>
+						</pre>
+					</div>
+
+	        	</div>
+	        	<div class="col-md-4">
+					<h3>Comments parsed with separator</h3>
+					<div class="highlight">
+						<pre>
+							<code id="separator">
+							</code>
+						</pre>
+					</div>
+	        	</div>
+	        	<div class="col-md-4">
+					<h3>Open your developer console to see the comments without parse.</h3>
+	        	</div>
+        	</div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+		<script src="js/jQuery.comments.js"></script>  
+		<script type="text/javascript">
+		$(document).ready(function() {
+			var $data = jQuery("#pWIthComment");	
+	        var comments = $data.comments();
+	        console.log(comments);
+	        var commentsParsed = jQuery($data).comments(true);
+	        for(var i=0;i<commentsParsed.length;i++) {
+			    jQuery('#parsed').append(commentsParsed[i] + '\n');
+			}
+
+			var commentsParsedSeparator = jQuery($data).comments(true, "|");
+	        for(var i=0;i<commentsParsedSeparator.length;i++) {
+			    jQuery('#separator').append(commentsParsedSeparator[i] + '\n');
+			}
+		});
+		</script>
+    </body>
+</html>
