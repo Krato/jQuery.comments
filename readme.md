@@ -47,7 +47,7 @@ And for a multi line comments:
 
 * **Eric Lagarda** - [Krato](https://github.com/Krato)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/Krato/jQuery.comments/graphs/contributors) who participated in this project.
 
 ## License
 
