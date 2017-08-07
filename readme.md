@@ -1,6 +1,6 @@
 # jQuery.comments
 
-This jQuery plugin retrives the comments inside a html or jQuery element
+A jQuery plugin to retrieve the comments inside a html or jQuery element
 
 ## Getting Started
 
